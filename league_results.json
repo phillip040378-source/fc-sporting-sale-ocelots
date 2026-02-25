@@ -1,0 +1,408 @@
+{
+    "ourTeam": "FC Sporting Sale U12 Ocelots",
+    "results": [
+        {
+            "date": "2026-02-22",
+            "home": "Altrincham FC Juniors U12 Sabres",
+            "homeScore": 0,
+            "awayScore": 3,
+            "away": "Wythenshawe FC U12 Pumas",
+            "note": "Away Walkover"
+        },
+        {
+            "date": "2026-02-22",
+            "home": "Sale Communities JFC U12 Eagles",
+            "homeScore": 1,
+            "awayScore": 7,
+            "away": "FC Sporting Sale U12 Ocelots"
+        },
+        {
+            "date": "2026-02-22",
+            "home": "Wythenshawe FC U12 Pumas",
+            "homeScore": 8,
+            "awayScore": 2,
+            "away": "Egerton FC U12 Pumas"
+        },
+        {
+            "date": "2026-02-22",
+            "home": "Wythenshawe FC U12 Tigers",
+            "homeScore": 2,
+            "awayScore": 3,
+            "away": "Hale United FC U12 Storm"
+        },
+        {
+            "date": "2026-02-15",
+            "home": "Wythenshawe FC U12 Tigers",
+            "homeScore": 6,
+            "awayScore": 2,
+            "away": "Sale Communities JFC U12 Eagles"
+        },
+        {
+            "date": "2026-02-08",
+            "home": "Sale Communities JFC U12 Eagles",
+            "homeScore": 7,
+            "awayScore": 3,
+            "away": "Hale United FC U12 Storm"
+        },
+        {
+            "date": "2026-02-08",
+            "home": "Timperley FC U12 Sporting",
+            "homeScore": 0,
+            "awayScore": 1,
+            "away": "FC Sporting Sale U12 Ocelots"
+        },
+        {
+            "date": "2026-02-01",
+            "home": "Hale United FC U12 Storm",
+            "homeScore": 1,
+            "awayScore": 2,
+            "away": "Ashton On Mersey FC U12 Infernos"
+        },
+        {
+            "date": "2026-02-01",
+            "home": "Sale Communities JFC U12 Eagles",
+            "homeScore": 3,
+            "awayScore": 1,
+            "away": "Ashton On Mersey FC U12 Sparks"
+        },
+        {
+            "date": "2026-01-25",
+            "home": "Ashton On Mersey FC U12 Sparks",
+            "homeScore": 2,
+            "awayScore": 7,
+            "away": "Wythenshawe FC U12 Tigers"
+        },
+        {
+            "date": "2026-01-25",
+            "home": "Timperley FC U12 Sporting",
+            "homeScore": 1,
+            "awayScore": 2,
+            "away": "Sale Communities JFC U12 Eagles"
+        },
+        {
+            "date": "2026-01-25",
+            "home": "Wythenshawe FC U12 Pumas",
+            "homeScore": 3,
+            "awayScore": 8,
+            "away": "FC Sporting Sale U12 Ocelots"
+        },
+        {
+            "date": "2026-01-18",
+            "home": "Altrincham FC Juniors U12 Sabres",
+            "homeScore": 1,
+            "awayScore": 6,
+            "away": "Sale Communities JFC U12 Eagles"
+        },
+        {
+            "date": "2026-01-18",
+            "home": "Ashton On Mersey FC U12 Infernos",
+            "homeScore": 4,
+            "awayScore": 2,
+            "away": "Hale United FC U12 Storm"
+        },
+        {
+            "date": "2026-01-18",
+            "home": "Egerton FC U12 Pumas",
+            "homeScore": 4,
+            "awayScore": 11,
+            "away": "FC Sporting Sale U12 Ocelots"
+        },
+        {
+            "date": "2026-01-18",
+            "home": "Timperley FC U12 Sporting",
+            "homeScore": 3,
+            "awayScore": 1,
+            "away": "Ashton On Mersey FC U12 Sparks"
+        },
+        {
+            "date": "2026-01-18",
+            "home": "Wythenshawe FC U12 Pumas",
+            "homeScore": 2,
+            "awayScore": 7,
+            "away": "Wythenshawe FC U12 Tigers"
+        },
+        {
+            "date": "2025-12-14",
+            "home": "Altrincham FC Juniors U12 Sabres",
+            "homeScore": 0,
+            "awayScore": 6,
+            "away": "FC Sporting Sale U12 Ocelots"
+        },
+        {
+            "date": "2025-12-14",
+            "home": "Ashton On Mersey FC U12 Sparks",
+            "homeScore": 3,
+            "awayScore": 4,
+            "away": "Sale Communities JFC U12 Eagles"
+        },
+        {
+            "date": "2025-12-14",
+            "home": "Egerton FC U12 Pumas",
+            "homeScore": 4,
+            "awayScore": 6,
+            "away": "Hale United FC U12 Storm"
+        },
+        {
+            "date": "2025-12-14",
+            "home": "Timperley FC U12 Sporting",
+            "homeScore": 1,
+            "awayScore": 7,
+            "away": "Wythenshawe FC U12 Tigers"
+        },
+        {
+            "date": "2025-12-14",
+            "home": "Wythenshawe FC U12 Pumas",
+            "homeScore": 3,
+            "awayScore": 5,
+            "away": "Ashton On Mersey FC U12 Infernos"
+        },
+        {
+            "date": "2025-12-07",
+            "home": "Hale United FC U12 Storm",
+            "homeScore": 0,
+            "awayScore": 6,
+            "away": "Sale Communities JFC U12 Eagles"
+        },
+        {
+            "date": "2025-12-07",
+            "home": "FC Sporting Sale U12 Ocelots",
+            "homeScore": 2,
+            "awayScore": 1,
+            "away": "Timperley FC U12 Sporting"
+        },
+        {
+            "date": "2025-12-07",
+            "home": "Wythenshawe FC U12 Tigers",
+            "homeScore": 8,
+            "awayScore": 0,
+            "away": "Ashton On Mersey FC U12 Sparks"
+        },
+        {
+            "date": "2025-11-30",
+            "home": "Altrincham FC Juniors U12 Sabres",
+            "homeScore": 2,
+            "awayScore": 3,
+            "away": "Egerton FC U12 Pumas"
+        },
+        {
+            "date": "2025-11-30",
+            "home": "Timperley FC U12 Sporting",
+            "homeScore": 1,
+            "awayScore": 3,
+            "away": "Ashton On Mersey FC U12 Infernos"
+        },
+        {
+            "date": "2025-11-30",
+            "home": "Wythenshawe FC U12 Pumas",
+            "homeScore": 2,
+            "awayScore": 0,
+            "away": "Hale United FC U12 Storm"
+        },
+        {
+            "date": "2025-11-23",
+            "home": "Hale United FC U12 Storm",
+            "homeScore": 0,
+            "awayScore": 3,
+            "away": "Wythenshawe FC U12 Tigers"
+        },
+        {
+            "date": "2025-11-23",
+            "home": "Ashton On Mersey FC U12 Infernos",
+            "homeScore": 4,
+            "awayScore": 4,
+            "away": "Ashton On Mersey FC U12 Sparks"
+        },
+        {
+            "date": "2025-11-23",
+            "home": "Egerton FC U12 Pumas",
+            "homeScore": 2,
+            "awayScore": 6,
+            "away": "Timperley FC U12 Sporting"
+        },
+        {
+            "date": "2025-11-23",
+            "home": "FC Sporting Sale U12 Ocelots",
+            "homeScore": 5,
+            "awayScore": 2,
+            "away": "Sale Communities JFC U12 Eagles"
+        },
+        {
+            "date": "2025-11-23",
+            "home": "Wythenshawe FC U12 Pumas",
+            "homeScore": 8,
+            "awayScore": 2,
+            "away": "Altrincham FC Juniors U12 Sabres"
+        },
+        {
+            "date": "2025-11-16",
+            "home": "Altrincham FC Juniors U12 Sabres",
+            "homeScore": 1,
+            "awayScore": 4,
+            "away": "Hale United FC U12 Storm"
+        },
+        {
+            "date": "2025-11-16",
+            "home": "Ashton On Mersey FC U12 Sparks",
+            "homeScore": 5,
+            "awayScore": 1,
+            "away": "Egerton FC U12 Pumas"
+        },
+        {
+            "date": "2025-11-16",
+            "home": "Sale Communities JFC U12 Eagles",
+            "homeScore": 2,
+            "awayScore": 4,
+            "away": "Ashton On Mersey FC U12 Infernos"
+        },
+        {
+            "date": "2025-11-16",
+            "home": "Timperley FC U12 Sporting",
+            "homeScore": 2,
+            "awayScore": 3,
+            "away": "Wythenshawe FC U12 Pumas"
+        },
+        {
+            "date": "2025-11-16",
+            "home": "Wythenshawe FC U12 Tigers",
+            "homeScore": 5,
+            "awayScore": 4,
+            "away": "FC Sporting Sale U12 Ocelots"
+        },
+        {
+            "date": "2025-11-09",
+            "home": "Hale United FC U12 Storm",
+            "homeScore": 0,
+            "awayScore": 2,
+            "away": "FC Sporting Sale U12 Ocelots"
+        },
+        {
+            "date": "2025-11-09",
+            "home": "Altrincham FC Juniors U12 Sabres",
+            "homeScore": 1,
+            "awayScore": 5,
+            "away": "Timperley FC U12 Sporting"
+        },
+        {
+            "date": "2025-11-09",
+            "home": "Ashton On Mersey FC U12 Infernos",
+            "homeScore": 1,
+            "awayScore": 6,
+            "away": "Wythenshawe FC U12 Tigers"
+        },
+        {
+            "date": "2025-11-09",
+            "home": "Sale Communities JFC U12 Eagles",
+            "homeScore": 2,
+            "awayScore": 5,
+            "away": "Egerton FC U12 Pumas"
+        },
+        {
+            "date": "2025-11-09",
+            "home": "Wythenshawe FC U12 Pumas",
+            "homeScore": 3,
+            "awayScore": 3,
+            "away": "Ashton On Mersey FC U12 Sparks"
+        },
+        {
+            "date": "2025-11-02",
+            "home": "Wythenshawe FC U12 Tigers",
+            "homeScore": 6,
+            "awayScore": 3,
+            "away": "Wythenshawe FC U12 Pumas"
+        },
+        {
+            "date": "2025-10-26",
+            "home": "Ashton On Mersey FC U12 Infernos",
+            "homeScore": 2,
+            "awayScore": 4,
+            "away": "FC Sporting Sale U12 Ocelots"
+        },
+        {
+            "date": "2025-10-26",
+            "home": "Wythenshawe FC U12 Pumas",
+            "homeScore": 4,
+            "awayScore": 2,
+            "away": "Sale Communities JFC U12 Eagles"
+        },
+        {
+            "date": "2025-10-19",
+            "home": "Ashton On Mersey FC U12 Sparks",
+            "homeScore": 2,
+            "awayScore": 8,
+            "away": "Wythenshawe FC U12 Pumas"
+        },
+        {
+            "date": "2025-10-19",
+            "home": "FC Sporting Sale U12 Ocelots",
+            "homeScore": 7,
+            "awayScore": 1,
+            "away": "Hale United FC U12 Storm"
+        },
+        {
+            "date": "2025-10-19",
+            "home": "Sale Communities JFC U12 Eagles",
+            "homeScore": 2,
+            "awayScore": 2,
+            "away": "Egerton FC U12 Pumas"
+        },
+        {
+            "date": "2025-10-19",
+            "home": "Timperley FC U12 Sporting",
+            "homeScore": 4,
+            "awayScore": 2,
+            "away": "Altrincham FC Juniors U12 Sabres"
+        },
+        {
+            "date": "2025-10-19",
+            "home": "Wythenshawe FC U12 Tigers",
+            "homeScore": 4,
+            "awayScore": 2,
+            "away": "Ashton On Mersey FC U12 Infernos"
+        },
+        {
+            "date": "2025-10-12",
+            "home": "Hale United FC U12 Storm",
+            "homeScore": 9,
+            "awayScore": 1,
+            "away": "Altrincham FC Juniors U12 Sabres"
+        },
+        {
+            "date": "2025-10-12",
+            "home": "Ashton On Mersey FC U12 Infernos",
+            "homeScore": 3,
+            "awayScore": 1,
+            "away": "Sale Communities JFC U12 Eagles"
+        },
+        {
+            "date": "2025-10-12",
+            "home": "Egerton FC U12 Pumas",
+            "homeScore": 5,
+            "awayScore": 4,
+            "away": "Ashton On Mersey FC U12 Sparks"
+        },
+        {
+            "date": "2025-10-12",
+            "home": "Wythenshawe FC U12 Pumas",
+            "homeScore": 5,
+            "awayScore": 2,
+            "away": "Timperley FC U12 Sporting"
+        }
+    ],
+    "fixtures": [
+        {
+            "date": "2026-03-08",
+            "home": "FC Sporting Sale U12 Ocelots",
+            "away": "Egerton FC U12 Pumas"
+        },
+        {
+            "date": "2026-03-22",
+            "home": "FC Sporting Sale U12 Ocelots",
+            "away": "Ashton On Mersey FC U12 Infernos"
+        },
+        {
+            "date": "2026-04-12",
+            "home": "FC Sporting Sale U12 Ocelots",
+            "away": "Wythenshawe FC U12 Pumas"
+        }
+    ]
+}

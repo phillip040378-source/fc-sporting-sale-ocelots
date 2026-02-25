@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="FC Sporting Sale Ocelots league results, fixtures and table. U12 Div 7, Timperley &amp; District JFL.">
+    <title>FC Sporting Sale Ocelots | League</title>
+    <link rel="icon" type="image/png" href="images/badge.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="images/badge.png" alt="FC Sporting Sale Badge" class="nav-badge">
+                <div class="nav-title">FC SPORTING SALE <span>OCELOTS</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="league.html" class="active">League</a></li>
+                <li><a href="cup.html">Cup</a></li>
+                <li><a href="players.html">Players</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <h1>LEAGUE <span>RESULTS &amp; FIXTURES</span></h1>
+        <p>Timperley &amp; District Junior Football League &bull; U12 Division 7</p>
+    </div>
+
+    <div class="page-content">
+        <section class="section">
+
+            <!-- Season Filter -->
+            <div class="season-filter">
+                <label for="leagueSeasonSelect">&#128197; Season:</label>
+                <select id="leagueSeasonSelect" onchange="filterSeason('league', this.value)">
+                    <option value="2025-26" selected>2025/26</option>
+                </select>
+            </div>
+
+            <!-- ==================== -->
+            <!-- SEASON 2025/26 DATA  -->
+            <!-- ==================== -->
+            <div class="season-data active" data-competition="league" data-season="2025-26">
+
+                <!-- Tabs -->
+                <div class="tab-nav">
+                    <button class="tab-btn active" onclick="switchTab(this, 'league-table-2025')">League Table</button>
+                    <button class="tab-btn" onclick="switchTab(this, 'league-results-2025')">Results</button>
+                    <button class="tab-btn" onclick="switchTab(this, 'league-fixtures-2025')">Fixtures</button>
+                </div>
+
+                <!-- League Table Tab -->
+                <div class="tab-content active" id="league-table-2025">
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <h3>&#127942; LEAGUE TABLE</h3>
+                            <span class="badge">2025/26</span>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Team</th>
+                                    <th>P</th>
+                                    <th>W</th>
+                                    <th>D</th>
+                                    <th>L</th>
+                                    <th>GD</th>
+                                    <th>Pts</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leagueTableBody">
+                                <!-- Dynamically populated from league_results.json -->
+                                <tr>
+                                    <td colspan="8" style="text-align:center; padding:24px; color:var(--muted-blue);">
+                                        Pulling live data from FA Full-Time...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Results Tab -->
+                <div class="tab-content" id="league-results-2025">
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <h3>&#128221; LEAGUE RESULTS</h3>
+                            <span class="badge">2025/26</span>
+                        </div>
+                        <div id="resultsContainer">
+                            <p style="text-align:center; padding:24px; color:var(--muted-blue);">Pulling live results
+                                from FA Full-Time...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fixtures Tab -->
+                <div class="tab-content" id="league-fixtures-2025">
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <h3>&#128197; UPCOMING LEAGUE FIXTURES</h3>
+                            <span class="badge">2025/26</span>
+                        </div>
+                        <div id="fixturesContainer">
+                            <p style="text-align:center; padding:24px; color:var(--muted-blue);">Pulling live fixtures
+                                from FA Full-Time...</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END 2025/26 SEASON DATA -->
+
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/badge.png" alt="Badge" class="footer-badge">
+                <div class="footer-brand-text">
+                    <h4>FC SPORTING SALE OCELOTS</h4>
+                    <p>Timperley &amp; District Junior Football League</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="league.html">League</a>
+                <a href="cup.html">Cup</a>
+                <a href="players.html">Players</a>
+                <a href="https://fulltime.thefa.com/index.html?divisionseason=110455868" target="_blank">FA
+                    Full-Time</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FC Sporting Sale Ocelots. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
