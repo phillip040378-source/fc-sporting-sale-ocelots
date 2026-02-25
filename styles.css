@@ -44,7 +44,9 @@
 }
 
 /* ---------- Reset & Base ---------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -210,13 +212,18 @@ img {
   width: 200%;
   height: 200%;
   background: radial-gradient(circle at 30% 50%, rgba(9, 114, 206, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 70% 80%, rgba(217, 168, 2, 0.06) 0%, transparent 40%);
+    radial-gradient(circle at 70% 80%, rgba(217, 168, 2, 0.06) 0%, transparent 40%);
   animation: heroGlow 8s ease-in-out infinite alternate;
 }
 
 @keyframes heroGlow {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(30px, -20px); }
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(30px, -20px);
+  }
 }
 
 .hero-content {
@@ -234,8 +241,15 @@ img {
 }
 
 @keyframes badgePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .hero h1 {
@@ -639,7 +653,7 @@ img {
   border-radius: var(--radius-sm);
   font-weight: 700;
   font-size: 1rem;
-  min-width: 70px;
+  min-width: 80px;
   text-align: center;
   letter-spacing: 2px;
 }
@@ -857,8 +871,15 @@ img {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---------- Footer ---------- */
