@@ -499,6 +499,11 @@ img {
 }
 
 /* ---------- Tables (Results / Fixtures / League) ---------- */
+.data-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .data-table-container {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -538,6 +543,14 @@ img {
   border-collapse: collapse;
 }
 
+.data-table tbody td {
+  padding: 14px 16px;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--light-gray);
+  transition: background var(--transition-fast);
+  white-space: nowrap;
+}
+
 .data-table thead th {
   padding: 14px 16px;
   text-align: left;
@@ -548,13 +561,7 @@ img {
   color: var(--text-medium);
   background: var(--light-gray);
   border-bottom: 2px solid var(--border-gray);
-}
-
-.data-table tbody td {
-  padding: 14px 16px;
-  font-size: 0.92rem;
-  border-bottom: 1px solid var(--light-gray);
-  transition: background var(--transition-fast);
+  white-space: nowrap;
 }
 
 .data-table tbody tr:hover {
@@ -1116,17 +1123,20 @@ img {
 @media (max-width: 768px) {
   .nav-links {
     position: fixed;
-    top: 0;
+    top: 72px;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - 72px);
     background: var(--dark-navy);
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    justify-content: flex-start;
+    padding-top: 40px;
+    gap: 16px;
     transform: translateX(100%);
     transition: transform var(--transition-base);
+    overflow-y: auto;
+    z-index: 999;
   }
 
   .nav-links.open {
@@ -1186,6 +1196,12 @@ img {
   .footer-links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
   }
 }
 

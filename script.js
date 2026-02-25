@@ -525,12 +525,14 @@ function renderLeagueTable(table, ourTeam) {
       <td>${t.w}</td>
       <td>${t.d}</td>
       <td>${t.l}</td>
+      <td>${t.f}</td>
+      <td>${t.a}</td>
       <td>${fmt(gd)}</td>
       <td><strong>${t.pts}</strong></td>
     </tr>
     <tr class="detail-row${detailClass}">
       <td></td>
-      <td colspan="7" class="detail-cell">
+      <td colspan="9" class="detail-cell">
         <span class="detail-label">Home:</span> P${t.hp} W${t.hw} D${t.hd} L${t.hl} (GD ${fmt(hgd)})
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <span class="detail-label">Away:</span> P${t.ap} W${t.aw} D${t.ad} L${t.al} (GD ${fmt(agd)})
