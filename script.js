@@ -127,7 +127,7 @@ async function loadPlayerStats() {
     console.warn('Could not load player_stats.csv:', err);
     const tbody = document.getElementById('statsTableBody');
     if (tbody) {
-      tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:24px; color:var(--muted-blue);">
+      tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:24px; color:var(--muted-blue);">
         Player stats will appear here once player_stats.csv is available.</td></tr>`;
     }
   }
@@ -162,6 +162,7 @@ function renderStatsTable(players) {
   // Calculate totals
   const totalMatches = players.reduce((sum, p) => sum + (parseInt(p.Matches) || 0), 0);
   const totalGoals = players.reduce((sum, p) => sum + (parseInt(p.Goals) || 0), 0);
+  const totalAssists = players.reduce((sum, p) => sum + (parseInt(p.Assists) || 0), 0);
   const totalCS = players.reduce((sum, p) => sum + (parseInt(p.CleanSheets) || 0), 0);
 
   tbody.innerHTML = sorted.map(player => {
@@ -171,6 +172,8 @@ function renderStatsTable(players) {
     const matches = player.Matches || '0';
     const isGK = pos.toLowerCase() === 'goalkeeper';
     const posClass = pos.toLowerCase().replace(/[\s\/]+/g, '-');
+
+    const assists = player.Assists || '0';
 
     let lastCol;
     if (isGK) {
@@ -187,6 +190,7 @@ function renderStatsTable(players) {
       <td><span class="position-badge ${posClass}">${pos}</span></td>
       <td>${matches}</td>
       <td>${lastCol}</td>
+      <td>${parseInt(assists) > 0 ? '<strong>' + assists + '</strong>' : assists}</td>
     </tr>`;
   }).join('');
 
@@ -197,6 +201,7 @@ function renderStatsTable(players) {
     <td></td>
     <td><strong>${totalMatches}</strong></td>
     <td><strong>${totalGoals}</strong> goals &nbsp;/&nbsp; <strong>${totalCS}</strong> 🧤</td>
+    <td><strong>${totalAssists}</strong></td>
   </tr>`;
 }
 
@@ -222,7 +227,8 @@ function renderPlayerCards(players) {
       statLine = `<span>&#9917; ${matches} matches</span><span>&#129351; ${cs} clean sheets</span>`;
     } else {
       const goals = player.Goals || '0';
-      statLine = `<span>&#9917; ${matches} matches</span><span>&#129349; ${goals} goals</span>`;
+      const assists = player.Assists || '0';
+      statLine = `<span>&#9917; ${matches} matches</span><span>&#129349; ${goals} goals</span>${parseInt(assists) > 0 ? '<span>&#127919; ' + assists + ' assists</span>' : ''}`;
     }
 
     return `<div class="player-card">

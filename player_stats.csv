@@ -1,16 +1,16 @@
-Name,Number,Position,Matches,Goals,CleanSheets
-Luca Pearson,10,Right Wing,18,13,0
-Elyas Syahminan Suut,20,Goalkeeper,17,0,2
-Feidhlim Murphy,11,Right Back,15,1,0
-Liam Barber,6,Left Wing,18,21,0
-Oliver Sartini,5,Centre Back,15,0,0
-Theo Palmer,17,Striker,17,13,0
-Varun Nedungadi,7,Goalkeeper,17,0,2
-Lincoln McLoughlin,16,Central Midfielder,18,15,0
-Avery Aggarwal,3,Right Back,14,1,0
-Pranav Pradeep,9,Left/Right Winger,14,4,0
-Jad Masri,14,Centre Back,12,0,0
-Yusha Muhammad Islam,11,Striker,2,0,0
-Jake Lane,7,Central Midfielder,10,1,0
-Ralph Foster,8,Central Midfielder,7,18,0
-Isaac Priday,21,Striker,7,10,0
+Name,Number,Position,Matches,Goals,Assists,CleanSheets
+Luca Pearson,10,Right Wing,19,16,19,0
+Elyas Syahminan Suut,20,Goalkeeper,18,0,0,2
+Feidhlim Murphy,11,Right Back,15,1,0,0
+Liam Barber,6,Left Wing,19,21,0,0
+Oliver Sartini,5,Centre Back,16,0,0,0
+Theo Palmer,17,Striker,18,13,0,0
+Varun Nedungadi,7,Goalkeeper,18,0,0,2
+Lincoln McLoughlin,16,Central Midfielder,19,16,1,0
+Avery Aggarwal,3,Right Back,15,1,0,0
+Pranav Pradeep,9,Left/Right Winger,15,4,0,0
+Jad Masri,14,Centre Back,13,0,0,0
+Yusha Muhammad Islam,11,Striker,2,0,0,0
+Jake Lane,7,Central Midfielder,8,18,0,0
+Ralph Foster,8,Central Midfielder,7,10,0,0
+Isaac Priday,21,Striker,7,10,0,0
