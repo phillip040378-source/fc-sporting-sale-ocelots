@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (index < 0 || index >= slides.length) return;
     stopResultsScroll();
     stopCardParade();
+    stopPhotoSequence();
     slides[currentSlide].classList.remove('active');
     currentSlide = index;
     slides[currentSlide].classList.add('active');
@@ -37,6 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
       startGoalsCounter();
     } else if (currentSlideId === 'slide-cards') {
       startCardParade();
+    } else if (currentSlideId === 'slide-photos') {
+      startPhotoSequence();
     }
 
     if (currentSlide === slides.length - 1 && isAutoPlaying) {
@@ -81,21 +84,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Card Parade Logic ---
   let cardParadeTimeout = null;
-  let photoTimeouts = [];
 
   function startCardParade() {
     const cards = document.querySelectorAll('#cards-stage .player-card');
     if (!cards.length) return;
 
-    // Reset all cards and photos
+    // Reset all cards
     cards.forEach(card => {
       card.style.animation = 'none';
       card.style.left = '-350px';
       card.style.opacity = '0';
     });
-    resetTeamPhotos();
 
-    const cardDuration = 4; // seconds per card to cross the screen
+    const cardDuration = 2.5; // seconds per card (fast in, pause, fast out)
     const totalCards = cards.length;
 
     // Stagger each card: one starts after the previous finishes
@@ -106,38 +107,56 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, 500);
 
-    // After all cards finish, start the photo sequence
-    const cardsFinishMs = (totalCards * cardDuration + 1) * 1000;
-    const photoDuration = 5; // seconds each photo is shown (fade in + hold + fade out)
+    // Auto-advance after all cards have finished
+    const totalDuration = (totalCards * cardDuration + 1.5) * 1000;
+    cardParadeTimeout = setTimeout(() => {
+      cardParadeTimeout = null;
+      nextSlide();
+    }, totalDuration);
+  }
 
-    // Family photo
+  function stopCardParade() {
+    if (cardParadeTimeout) {
+      clearTimeout(cardParadeTimeout);
+      cardParadeTimeout = null;
+    }
+    const cards = document.querySelectorAll('#cards-stage .player-card');
+    cards.forEach(card => {
+      card.style.animation = 'none';
+    });
+  }
+
+  // --- Team Photos Sequence Logic ---
+  let photoSequenceTimeout = null;
+  let photoTimeouts = [];
+
+  function startPhotoSequence() {
+    resetTeamPhotos();
+
+    const photoDuration = 6; // seconds each photo is shown
+
+    // Family photo starts immediately
     const t1 = setTimeout(() => {
-      // Hide the cards stage and title
-      const stage = document.getElementById('cards-stage');
-      const title = document.querySelector('#slide-cards .presentation-title');
-      if (stage) stage.style.opacity = '0';
-      if (title) title.style.opacity = '0';
-
       const familyEl = document.getElementById('team-photo-family');
       if (familyEl) {
         familyEl.style.animation = `photoFadeInOut ${photoDuration}s ease-in-out forwards`;
       }
-    }, cardsFinishMs);
+    }, 500);
     photoTimeouts.push(t1);
 
-    // Team photo (starts after family photo finishes)
+    // Team photo starts after family photo finishes
     const t2 = setTimeout(() => {
       const teamEl = document.getElementById('team-photo-team');
       if (teamEl) {
         teamEl.style.animation = `photoFadeInOut ${photoDuration}s ease-in-out forwards`;
       }
-    }, cardsFinishMs + photoDuration * 1000);
+    }, 500 + photoDuration * 1000);
     photoTimeouts.push(t2);
 
-    // Auto-advance after both photos have finished
-    const totalMs = cardsFinishMs + (photoDuration * 2 + 1.5) * 1000;
-    cardParadeTimeout = setTimeout(() => {
-      cardParadeTimeout = null;
+    // Auto-advance after both photos
+    const totalMs = 500 + (photoDuration * 2 + 1.5) * 1000;
+    photoSequenceTimeout = setTimeout(() => {
+      photoSequenceTimeout = null;
       nextSlide();
     }, totalMs);
   }
@@ -147,24 +166,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const teamEl = document.getElementById('team-photo-team');
     if (familyEl) { familyEl.style.animation = 'none'; familyEl.style.opacity = '0'; }
     if (teamEl) { teamEl.style.animation = 'none'; teamEl.style.opacity = '0'; }
-    // Restore cards stage and title visibility
-    const stage = document.getElementById('cards-stage');
-    const title = document.querySelector('#slide-cards .presentation-title');
-    if (stage) stage.style.opacity = '1';
-    if (title) title.style.opacity = '1';
   }
 
-  function stopCardParade() {
-    if (cardParadeTimeout) {
-      clearTimeout(cardParadeTimeout);
-      cardParadeTimeout = null;
+  function stopPhotoSequence() {
+    if (photoSequenceTimeout) {
+      clearTimeout(photoSequenceTimeout);
+      photoSequenceTimeout = null;
     }
     photoTimeouts.forEach(t => clearTimeout(t));
     photoTimeouts = [];
-    const cards = document.querySelectorAll('#cards-stage .player-card');
-    cards.forEach(card => {
-      card.style.animation = 'none';
-    });
     resetTeamPhotos();
   }
 
@@ -236,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     autoPlayBtn.style.color = 'var(--dark-navy)';
     autoPlayBtn.title = 'Stop Auto-play';
     autoPlayInterval = setInterval(() => {
-      if (slides[currentSlide].id === 'slide-results-scroll' || slides[currentSlide].id === 'slide-cards') return;
+      if (slides[currentSlide].id === 'slide-results-scroll' || slides[currentSlide].id === 'slide-cards' || slides[currentSlide].id === 'slide-photos') return;
       if (currentSlide < slides.length - 1) {
         nextSlide();
       } else {
