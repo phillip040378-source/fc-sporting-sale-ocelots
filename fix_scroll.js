@@ -1,0 +1,10 @@
+const fs = require('fs');
+const lines = fs.readFileSync('presentation.html', 'utf8').split('\n');
+const newSlide = fs.readFileSync('_results_slide.html', 'utf8');
+const s = lines.findIndex(l => l.includes('Slide: Full Season Results Scroll'));
+const e = lines.findIndex((l, i) => i > s && l.includes('Slide 8: Season Progress'));
+const before = lines.slice(0, s);
+const after = lines.slice(e);
+const result = [...before, ...newSlide.split('\n'), ...after].join('\n');
+fs.writeFileSync('presentation.html', result);
+console.log('Replaced lines', s+1, 'to', e, 'with new smooth scroll slide');

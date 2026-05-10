@@ -48,6 +48,8 @@
                 <label for="cupSeasonSelect">&#128197; Season:</label>
                 <select id="cupSeasonSelect" onchange="filterSeason('cup', this.value)">
                     <option value="2025-26" selected>2025/26</option>
+                    <option value="2024-25">2024/25</option>
+                    <option value="2023-24">2023/24</option>
                 </select>
             </div>
 
@@ -92,6 +94,169 @@
 
             </div>
             <!-- END 2025/26 SEASON DATA -->
+
+            <!-- ==================== -->
+            <!-- SEASON 2024/25 DATA  -->
+            <!-- ==================== -->
+            <div class="season-data" data-competition="cup" data-season="2024-25">
+                
+                <!-- Tabs -->
+                <div class="tab-nav">
+                    <button class="tab-btn active" onclick="switchTab(this, 'cup-standings-2024')">Autumn Cup</button>
+                    <button class="tab-btn" onclick="switchTab(this, 'spring-cup-2024')">Spring Cup</button>
+                </div>
+
+                <!-- Standings Tab -->
+                <div class="tab-content active" id="cup-standings-2024">
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <h3>&#127942; AUTUMN CUP STANDINGS</h3>
+                            <span class="badge">2024/25 Final</span>
+                        </div>
+                        <div class="data-table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Pos</th>
+                                        <th>Team</th>
+                                        <th>P</th>
+                                        <th>W</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th>PTS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Altrincham FC Juniors U11 Flames</td><td>5</td><td>4</td><td>0</td><td>1</td><td><strong>12</strong></td></tr>
+                                    <tr><td>2</td><td>Sale Communities JFC U11 Falcons</td><td>5</td><td>3</td><td>1</td><td>1</td><td><strong>10</strong></td></tr>
+                                    <tr><td>3</td><td>Timperley FC U11 Sporting</td><td>5</td><td>2</td><td>1</td><td>2</td><td><strong>7</strong></td></tr>
+                                    <tr class="our-team"><td>4</td><td>&#9917; FC Sporting Sale U11 Ocelots</td><td>5</td><td>2</td><td>0</td><td>3</td><td><strong>6</strong></td></tr>
+                                    <tr><td>5</td><td>Egerton Football Club U11 Pumas</td><td>5</td><td>1</td><td>2</td><td>2</td><td><strong>6*</strong></td></tr>
+                                    <tr><td>6</td><td>Altrincham FC Juniors U11 Sabres</td><td>5</td><td>0</td><td>2</td><td>3</td><td><strong>4*</strong></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spring Cup Tab -->
+                <div class="tab-content" id="spring-cup-2024">
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <h3>&#127942; SPRING CUP STANDINGS</h3>
+                            <span class="badge">2024/25 Final</span>
+                        </div>
+                        <div class="data-table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Pos</th>
+                                        <th>Team</th>
+                                        <th>P</th>
+                                        <th>W</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th>PTS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>AFC Urmston Meadowside U11 Raiders</td><td>7</td><td>6</td><td>1</td><td>0</td><td><strong>20*</strong></td></tr>
+                                    <tr><td>2</td><td>Sale Communities JFC U11 Falcons</td><td>7</td><td>5</td><td>0</td><td>2</td><td><strong>15</strong></td></tr>
+                                    <tr><td>3</td><td>Ashton On Mersey FC U11 Infernos</td><td>7</td><td>4</td><td>1</td><td>2</td><td><strong>13</strong></td></tr>
+                                    <tr><td>4</td><td>Egerton Football Club U11 Pumas</td><td>7</td><td>3</td><td>1</td><td>3</td><td><strong>11*</strong></td></tr>
+                                    <tr class="our-team"><td>5</td><td>&#9917; FC Sporting Sale U11 Ocelots</td><td>7</td><td>2</td><td>2</td><td>3</td><td><strong>9*</strong></td></tr>
+                                    <tr><td>6</td><td>Timperley FC U11 Sporting</td><td>7</td><td>2</td><td>2</td><td>3</td><td><strong>8</strong></td></tr>
+                                    <tr><td>7</td><td>Hale United FC U11 Storm</td><td>7</td><td>2</td><td>0</td><td>5</td><td><strong>6</strong></td></tr>
+                                    <tr><td>8</td><td>Altrincham FC Juniors U11 Sabres</td><td>7</td><td>0</td><td>1</td><td>6</td><td><strong>2*</strong></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END 2024/25 SEASON DATA -->
+
+            <!-- ==================== -->
+            <!-- SEASON 2023/24 DATA  -->
+            <!-- ==================== -->
+            <div class="season-data" data-competition="cup" data-season="2023-24">
+                
+                <!-- Tabs -->
+                <div class="tab-nav">
+                    <button class="tab-btn active" onclick="switchTab(this, 'cup-standings-2023')">Autumn Cup</button>
+                    <button class="tab-btn" onclick="switchTab(this, 'spring-cup-2023')">Spring Cup</button>
+                </div>
+
+                <!-- Standings Tab -->
+                <div class="tab-content active" id="cup-standings-2023">
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <h3>&#127942; AUTUMN CUP STANDINGS</h3>
+                            <span class="badge">2023/24 Final</span>
+                        </div>
+                        <div class="data-table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Pos</th>
+                                        <th>Team</th>
+                                        <th>P</th>
+                                        <th>W</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th>PTS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Timperley FC U10 Sporting</td><td>4</td><td>2</td><td>1</td><td>1</td><td><strong>8*</strong></td></tr>
+                                    <tr><td>2</td><td>Altrincham FC Juniors U10 Raiders</td><td>4</td><td>2</td><td>0</td><td>2</td><td><strong>6</strong></td></tr>
+                                    <tr><td>3</td><td>AFC Urmston Meadowside U10 Raiders</td><td>4</td><td>2</td><td>0</td><td>2</td><td><strong>6</strong></td></tr>
+                                    <tr><td>4</td><td>Egerton Football Club U10 Pumas</td><td>4</td><td>2</td><td>0</td><td>2</td><td><strong>6</strong></td></tr>
+                                    <tr class="our-team"><td>5</td><td>&#9917; FC Sporting Sale U10 Ocelots</td><td>4</td><td>1</td><td>1</td><td>2</td><td><strong>4*</strong></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spring Cup Tab -->
+                <div class="tab-content" id="spring-cup-2023">
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <h3>&#127942; SPRING CUP STANDINGS</h3>
+                            <span class="badge">2023/24 Final</span>
+                        </div>
+                        <div class="data-table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Pos</th>
+                                        <th>Team</th>
+                                        <th>P</th>
+                                        <th>W</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th>PTS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Sale Communities JFC U10 Falcons</td><td>7</td><td>4</td><td>2</td><td>1</td><td><strong>16*</strong></td></tr>
+                                    <tr><td>2</td><td>Urmston Town Juniors U10 Panthers</td><td>7</td><td>4</td><td>2</td><td>1</td><td><strong>15*</strong></td></tr>
+                                    <tr><td>3</td><td>Alderley United FC U10 Warlocks</td><td>7</td><td>5</td><td>0</td><td>2</td><td><strong>15</strong></td></tr>
+                                    <tr class="our-team"><td>4</td><td>&#9917; FC Sporting Sale U10 Ocelots</td><td>7</td><td>3</td><td>1</td><td>3</td><td><strong>11*</strong></td></tr>
+                                    <tr><td>5</td><td>Egerton Football Club U10 Pumas</td><td>6</td><td>3</td><td>1</td><td>2</td><td><strong>10</strong></td></tr>
+                                    <tr><td>6</td><td>Hale United FC U10 Storm</td><td>7</td><td>2</td><td>0</td><td>5</td><td><strong>6</strong></td></tr>
+                                    <tr><td>7</td><td>Timperley FC U10 Sporting</td><td>7</td><td>1</td><td>2</td><td>4</td><td><strong>5</strong></td></tr>
+                                    <tr><td>8</td><td>AFC Urmston Meadowside U10 Raiders</td><td>6</td><td>1</td><td>0</td><td>5</td><td><strong>3</strong></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END 2023/24 SEASON DATA -->
 
         </section>
     </div>
