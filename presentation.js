@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function goToSlide(index) {
     if (index < 0 || index >= slides.length) return;
     stopResultsScroll();
+    stopCardParade();
     slides[currentSlide].classList.remove('active');
     currentSlide = index;
     slides[currentSlide].classList.add('active');
@@ -34,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
       startResultsScroll();
     } else if (currentSlideId === 'slide-goals-counter') {
       startGoalsCounter();
+    } else if (currentSlideId === 'slide-cards') {
+      startCardParade();
     }
 
     if (currentSlide === slides.length - 1 && isAutoPlaying) {
@@ -74,6 +77,95 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       requestAnimationFrame(updateCounter);
     }, 500);
+  }
+
+  // --- Card Parade Logic ---
+  let cardParadeTimeout = null;
+  let photoTimeouts = [];
+
+  function startCardParade() {
+    const cards = document.querySelectorAll('#cards-stage .player-card');
+    if (!cards.length) return;
+
+    // Reset all cards and photos
+    cards.forEach(card => {
+      card.style.animation = 'none';
+      card.style.left = '-350px';
+      card.style.opacity = '0';
+    });
+    resetTeamPhotos();
+
+    const cardDuration = 4; // seconds per card to cross the screen
+    const totalCards = cards.length;
+
+    // Stagger each card: one starts after the previous finishes
+    setTimeout(() => {
+      cards.forEach((card, i) => {
+        const delay = i * cardDuration;
+        card.style.animation = `cardParade ${cardDuration}s ${delay}s ease-in-out forwards`;
+      });
+    }, 500);
+
+    // After all cards finish, start the photo sequence
+    const cardsFinishMs = (totalCards * cardDuration + 1) * 1000;
+    const photoDuration = 5; // seconds each photo is shown (fade in + hold + fade out)
+
+    // Family photo
+    const t1 = setTimeout(() => {
+      // Hide the cards stage and title
+      const stage = document.getElementById('cards-stage');
+      const title = document.querySelector('#slide-cards .presentation-title');
+      if (stage) stage.style.opacity = '0';
+      if (title) title.style.opacity = '0';
+
+      const familyEl = document.getElementById('team-photo-family');
+      if (familyEl) {
+        familyEl.style.animation = `photoFadeInOut ${photoDuration}s ease-in-out forwards`;
+      }
+    }, cardsFinishMs);
+    photoTimeouts.push(t1);
+
+    // Team photo (starts after family photo finishes)
+    const t2 = setTimeout(() => {
+      const teamEl = document.getElementById('team-photo-team');
+      if (teamEl) {
+        teamEl.style.animation = `photoFadeInOut ${photoDuration}s ease-in-out forwards`;
+      }
+    }, cardsFinishMs + photoDuration * 1000);
+    photoTimeouts.push(t2);
+
+    // Auto-advance after both photos have finished
+    const totalMs = cardsFinishMs + (photoDuration * 2 + 1.5) * 1000;
+    cardParadeTimeout = setTimeout(() => {
+      cardParadeTimeout = null;
+      nextSlide();
+    }, totalMs);
+  }
+
+  function resetTeamPhotos() {
+    const familyEl = document.getElementById('team-photo-family');
+    const teamEl = document.getElementById('team-photo-team');
+    if (familyEl) { familyEl.style.animation = 'none'; familyEl.style.opacity = '0'; }
+    if (teamEl) { teamEl.style.animation = 'none'; teamEl.style.opacity = '0'; }
+    // Restore cards stage and title visibility
+    const stage = document.getElementById('cards-stage');
+    const title = document.querySelector('#slide-cards .presentation-title');
+    if (stage) stage.style.opacity = '1';
+    if (title) title.style.opacity = '1';
+  }
+
+  function stopCardParade() {
+    if (cardParadeTimeout) {
+      clearTimeout(cardParadeTimeout);
+      cardParadeTimeout = null;
+    }
+    photoTimeouts.forEach(t => clearTimeout(t));
+    photoTimeouts = [];
+    const cards = document.querySelectorAll('#cards-stage .player-card');
+    cards.forEach(card => {
+      card.style.animation = 'none';
+    });
+    resetTeamPhotos();
   }
 
   function nextSlide() {
@@ -144,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
     autoPlayBtn.style.color = 'var(--dark-navy)';
     autoPlayBtn.title = 'Stop Auto-play';
     autoPlayInterval = setInterval(() => {
-      if (slides[currentSlide].id === 'slide-results-scroll') return;
+      if (slides[currentSlide].id === 'slide-results-scroll' || slides[currentSlide].id === 'slide-cards') return;
       if (currentSlide < slides.length - 1) {
         nextSlide();
       } else {

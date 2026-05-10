@@ -935,6 +935,132 @@
       </div>
     </div>
 
+    <!-- Slide: Player Cards Parade -->
+    <div class="slide" id="slide-cards">
+      <style>
+        #slide-cards .slide-content {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .cards-stage {
+          position: relative;
+          width: 100%;
+          height: 70vh;
+          overflow: hidden;
+        }
+
+        .player-card {
+          position: absolute;
+          top: 50%;
+          left: -350px;
+          transform: translateY(-50%);
+          width: 300px;
+          opacity: 0;
+          filter: drop-shadow(0 0 25px rgba(217, 168, 2, 0.6));
+          transition: none;
+          will-change: left, opacity;
+        }
+
+        .player-card img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 12px;
+        }
+
+        @keyframes cardParade {
+          0% {
+            left: -350px;
+            opacity: 0;
+          }
+          8% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 1;
+          }
+          92% {
+            opacity: 1;
+          }
+          100% {
+            left: calc(100% + 50px);
+            opacity: 0;
+          }
+        }
+        @keyframes photoFadeInOut {
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+          15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+        }
+
+        .team-photo-overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 85%;
+          max-width: 800px;
+          opacity: 0;
+          z-index: 10;
+          pointer-events: none;
+        }
+
+        .team-photo-overlay img {
+          width: 100%;
+          height: auto;
+          border-radius: 16px;
+          border: 4px solid var(--accent-gold);
+          box-shadow: 0 0 50px rgba(217, 168, 2, 0.5);
+          display: block;
+        }
+
+        .photo-caption {
+          text-align: center;
+          font-family: var(--font-display);
+          font-size: 2rem;
+          letter-spacing: 3px;
+          color: var(--accent-gold);
+          text-shadow: 0 0 20px rgba(217, 168, 2, 0.6);
+          margin-top: 12px;
+        }
+      </style>
+      <div class="slide-content">
+        <h1 class="presentation-title" style="font-size: 3.5rem; margin-bottom: 10px;">SQUAD CARDS ⚽</h1>
+        <div class="cards-stage" id="cards-stage">
+          <div class="player-card" data-card-index="0"><img src="images/card_eli.png" alt="Eli"></div>
+          <div class="player-card" data-card-index="1"><img src="images/card_jad.png" alt="Jad"></div>
+          <div class="player-card" data-card-index="2"><img src="images/card_avery.png" alt="Avery"></div>
+          <div class="player-card" data-card-index="3"><img src="images/card_jake.png" alt="Jake"></div>
+          <div class="player-card" data-card-index="4"><img src="images/card_feidhlim.png" alt="Feidhlim"></div>
+          <div class="player-card" data-card-index="5"><img src="images/card_liam.png" alt="Liam"></div>
+          <div class="player-card" data-card-index="6"><img src="images/card_oliver.png" alt="Oliver"></div>
+          <div class="player-card" data-card-index="7"><img src="images/card_lincoln.png" alt="Lincoln"></div>
+          <div class="player-card" data-card-index="8"><img src="images/card_pranav.png" alt="Pranav"></div>
+          <div class="player-card" data-card-index="9"><img src="images/card_luca.png" alt="Luca"></div>
+          <div class="player-card" data-card-index="10"><img src="images/card_ralph.png" alt="Ralph"></div>
+          <div class="player-card" data-card-index="11"><img src="images/card_theo.png" alt="Theo"></div>
+          <div class="player-card" data-card-index="12"><img src="images/card_varun.png" alt="Varun"></div>
+        </div>
+        <!-- Team photos: fade in/out after card parade -->
+        <div class="team-photo-overlay" id="team-photo-family">
+          <img src="images/photo_family.jpg" alt="Ocelots Family Photo">
+          <p class="photo-caption">THE OCELOTS FAMILY &#128153;</p>
+        </div>
+        <div class="team-photo-overlay" id="team-photo-team">
+          <img src="images/photo_team.jpg" alt="Ocelots Team Photo">
+          <p class="photo-caption">THE SQUAD &#9917;</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Slide 12: Outro / Mascot -->
     <div class="slide" id="slide-outro">
       <div class="slide-content" style="justify-content: center; gap: 10px; padding: 20px;">
