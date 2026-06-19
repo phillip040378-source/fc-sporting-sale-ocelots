@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function goToSlide(index) {
     if (index < 0 || index >= slides.length) return;
     stopResultsScroll();
+    stopMomentsSequence();
     stopCardParade();
     stopPhotoSequence();
     slides[currentSlide].classList.remove('active');
@@ -36,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
       startResultsScroll();
     } else if (currentSlideId === 'slide-goals-counter') {
       startGoalsCounter();
+    } else if (currentSlideId === 'slide-moments') {
+      startMomentsSequence();
     } else if (currentSlideId === 'slide-cards') {
       startCardParade();
     } else if (currentSlideId === 'slide-photos') {
@@ -82,6 +85,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   }
 
+  // --- Moments of the Season Logic ---
+  let momentsSequenceTimeout = null;
+  let momentTimeouts = [];
+
+  function startMomentsSequence() {
+    const bubbles = document.querySelectorAll('#moments-wall .moment-bubble');
+    if (!bubbles.length) return;
+
+    resetMoments();
+
+    const stagger = 1100; // ms between each bubble popping in
+    bubbles.forEach((bubble, i) => {
+      const t = setTimeout(() => {
+        bubble.style.animation = 'momentPop 0.6s ease-out forwards';
+      }, 600 + i * stagger);
+      momentTimeouts.push(t);
+    });
+
+    // Auto-advance after the last bubble has popped, plus a hold to read
+    const totalMs = 600 + bubbles.length * stagger + 3500;
+    momentsSequenceTimeout = setTimeout(() => {
+      momentsSequenceTimeout = null;
+      nextSlide();
+    }, totalMs);
+  }
+
+  function resetMoments() {
+    const bubbles = document.querySelectorAll('#moments-wall .moment-bubble');
+    bubbles.forEach(bubble => {
+      bubble.style.animation = 'none';
+      bubble.style.opacity = '0';
+    });
+  }
+
+  function stopMomentsSequence() {
+    if (momentsSequenceTimeout) {
+      clearTimeout(momentsSequenceTimeout);
+      momentsSequenceTimeout = null;
+    }
+    momentTimeouts.forEach(t => clearTimeout(t));
+    momentTimeouts = [];
+    resetMoments();
+  }
+
   // --- Card Parade Logic ---
   let cardParadeTimeout = null;
 
@@ -92,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reset all cards
     cards.forEach(card => {
       card.style.animation = 'none';
-      card.style.left = '-350px';
       card.style.opacity = '0';
     });
 
@@ -246,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
     autoPlayBtn.style.color = 'var(--dark-navy)';
     autoPlayBtn.title = 'Stop Auto-play';
     autoPlayInterval = setInterval(() => {
-      if (slides[currentSlide].id === 'slide-results-scroll' || slides[currentSlide].id === 'slide-cards' || slides[currentSlide].id === 'slide-photos') return;
+      if (slides[currentSlide].id === 'slide-results-scroll' || slides[currentSlide].id === 'slide-moments' || slides[currentSlide].id === 'slide-cards' || slides[currentSlide].id === 'slide-photos') return;
       if (currentSlide < slides.length - 1) {
         nextSlide();
       } else {
